@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
 import requests
-
+import os
+import mdmail
+from mailer import SendViaMail
 
 class TopPosts():
     def __init__(self, subreddit):
@@ -27,9 +29,15 @@ class BeautifyTopPosts():
             message += "* [%s](https://reddit.com/%s)\n" % (post['data']['title'], post['data']['permalink'])
         return message        
 
+
+
 if __name__ == '__main__':
     for sub in ['netsec', 'devops']:
         tp = TopPosts(sub)
         bp = BeautifyTopPosts(sub, tp.top_posts)
-        print(bp.markdown())
-    
+        SendViaMail(
+            from_addr = "Reddit Top Posts <rtp@alorenzi.eu>",
+            to_addr = "alorenzi@alorenzi.eu",
+            subj =  "[%s] Reddit Top Posts" % sub,
+            message_text= bp.markdown()
+        )
