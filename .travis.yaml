@@ -1,0 +1,16 @@
+language: python
+python:
+- "3.6"
+
+install:
+  - pip install requests
+
+script:
+  - python3 reddit-top-posts
+
+notifications:
+  email:
+    recipients:
+      - alorenzi@alorenzi.eu
+    on_success: always 
+    on_failure: always
