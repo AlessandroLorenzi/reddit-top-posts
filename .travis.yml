@@ -8,9 +8,3 @@ install:
 script:
   - python3 reddit-top-posts.py
 
-notifications:
-  email:
-    recipients:
-      - alorenzi@alorenzi.eu
-    on_success: always 
-    on_failure: always
