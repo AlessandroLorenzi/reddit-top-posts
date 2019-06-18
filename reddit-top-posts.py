@@ -2,7 +2,6 @@
 
 import requests
 
-from pprint import pprint 
 
 class TopPosts():
     def __init__(self, subreddit):
