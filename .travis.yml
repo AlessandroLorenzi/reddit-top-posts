@@ -6,7 +6,7 @@ install:
   - pip install requests
 
 script:
-  - python3 reddit-top-posts
+  - python3 reddit-top-posts.py
 
 notifications:
   email:
