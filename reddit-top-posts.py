@@ -26,7 +26,7 @@ class BeautifyTopPosts():
         message = "# %s \n" % self.subreddit
         message += "\n"
         for post in self.top_posts:
-            message += "* [%s](https://reddit.com/%s)\n" % (post['data']['title'], post['data']['permalink'])
+            message += "* [%s](https://reddit.com%s)\n" % (post['data']['title'], post['data']['permalink'])
         return message        
 
 
