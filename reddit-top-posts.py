@@ -2,6 +2,7 @@
 
 from mailer import SendViaMail
 from topposts import TopPosts, BeautifyTopPosts
+import os
 
 if __name__ == '__main__':
     subs = os.environ.get('SUBS', '').split(',')
