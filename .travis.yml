@@ -2,7 +2,7 @@ language: python
 python:
 - '3.6'
 install:
-- pip install requests mdmail
+- pip install requests
 script:
 - python3 reddit-top-posts.py
 env:
