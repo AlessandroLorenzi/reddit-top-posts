@@ -3,4 +3,4 @@
 
 . ~/.config/rtp.env
 
-python3 reddit-top-posts.py 
+python3 reddit_top_posts.py 
