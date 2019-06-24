@@ -1,0 +1,6 @@
+#!/bin/bash
+
+
+. ~/.config/rtp.env
+
+python3 reddit-top-posts.py 

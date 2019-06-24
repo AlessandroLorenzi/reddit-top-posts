@@ -1,0 +1,32 @@
+#!/bin/bash
+
+
+echo -n "Sovrascrivere la conf? (ctrl+c to exit) "
+read
+
+
+echo -n "SMTP_USER: "
+read SMTP_USER  
+echo -n "SMTP_PASSWORD: "
+read SMTP_PASSWORD  
+echo -n "SMTP_HOST: "
+read SMTP_HOST  
+echo -n "SMTP_PORT: "
+read SMTP_PORT  
+echo -n "SUBS: "
+read SUBS  
+echo -n "TO_ADDR: "
+read TO_ADDR  
+echo -n "FROM_ADDR: "
+read FROM_ADDR  
+
+
+echo """
+export SMTP_USER=${SMTP_USER}
+export SMTP_PASSWORD=${SMTP_PASSWORD}
+export SMTP_HOST=${SMTP_HOST}
+export SMTP_PORT=${SMTP_PORT}
+export SUBS=${SUBS}
+export TO_ADDR=${TO_ADDR}
+export FROM_ADDR=${FROM_ADDR}
+""" > ~/.config/rtp.env
