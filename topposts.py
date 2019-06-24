@@ -13,7 +13,6 @@ class TopPosts():
         self.top_posts = posts['data']['children']
 
 class BeautifyTopPosts():
-    
     def __init__(self, subreddit, top_posts):
         self.subreddit = subreddit
         self.top_posts = top_posts

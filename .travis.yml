@@ -11,3 +11,6 @@ env:
   - secure: EjjppWrEBonKhTULFaryGAWIwE7hgGElQdTc3QnzkAcEDxWal/r3d50mdb7basgpI3tpVtj93enEIhPsmW26ZGPT8h4VXkAFR/q/GrDnkUgZXVzffF21Z5ARwhQwEyEDo8tdVbzXE1ksMCqRPgl4e2eyZBp0BQXX9ARjZBP7s6ccHoMX2GJiPe+TMG6R9YMG0Rr0VVO7esqhM1sw6N3Pv3S7q+9axmwqeazb/fRajWSeaDCm5tLA/Abzbip4nFCQKF08CHyZ8te+9yLhdq4CZa/zf7rCKobSc6MLNQlIQtXbDVXjsIxvhfZxNHXAYVdMnTkiaCxjBu0ZwcbnRsgaJFjI1gAe0rfnmVPjYbzyWFtYiYfcCC1pu37h+dzhZYD5rsTELqqb4Y4B9ZMXk98tgagTovvrqk2HQ9EF43Og5iWOQ5c7oGuFyNtJ7/rsAW69Q3QWdfCa5qZ1EOGlSJ2JDcn5ZNpQQzIgNop4YPvJzNkfWDN3T2uqM54E/6NfEcPDod9TilE4bGpT5clhANLHG8Z7pR7J3Y/SeBFOFN70F4/hi6F+BI75qB+OnbOZ2b/u4swHjQVK/jiWCSk9U5Yv0klLo2lsCKJ+kEq8lJLzqubNyYIhwR02Zd5uSC2RFxtuX1h0MVQWwJze3vGTlHBklHUmllDJNApwOmiBURGBS+I=
   - SMTP_HOST=mail.alorenzi.eu
   - SMTP_PORT=587
+  - SUBS=italy,netsec,devops
+  - TO_ADDR=alorenzi@alorenzi.eu
+  - FROM_ADDR="Reddit Top Posts <rtp@alorenzi.eu>"

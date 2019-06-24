@@ -3,7 +3,7 @@ from email.mime.text import MIMEText
 
 
 class SendViaMail():
-    def __init__(self, from_addr, to_addr, subj, message_text ):
+    def __init__(self, from_addr, to_addr, subj, message_text, smtp ):
         date = datetime.datetime.now().strftime( "%d/%m/%Y %H:%M" )
 
         
@@ -12,18 +12,11 @@ class SendViaMail():
         msg['From'] = from_addr
         msg['To'] = to_addr
         
-        smtp_server = self.create_smtp_server()
+        smtp_server = self.create_smtp_server(smtp)
         smtp_server.sendmail(from_addr, to_addr, msg.as_string())
         smtp_server.quit()
 
-    def create_smtp_server(self):
-        smtp = {
-            'host': os.environ['SMTP_HOST'],
-            'port': os.environ['SMTP_PORT'],
-            'user': os.environ['SMTP_USER'],
-            'password': os.environ['SMTP_PASSWORD'],
-        }
-        
+    def create_smtp_server(self, smtp):
         _DEFAULT_CIPHERS = (
         'ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+HIGH:'
         'DH+HIGH:ECDH+3DES:DH+3DES:RSA+AESGCM:RSA+AES:RSA+HIGH:RSA+3DES:!aNULL:'
