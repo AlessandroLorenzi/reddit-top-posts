@@ -1,4 +1,6 @@
 #!/bin/bash
 
 pylint-3  --disable=missing-docstring,too-few-public-methods,too-many-arguments \
-   mailer.py reddit_top_posts.py topposts.py 
+   mailer.py reddit_top_posts.py topposts.py
+
+exit $?
