@@ -1,0 +1,5 @@
+#!/bin/bash
+
+pip3 install pylint
+
+pip3 install requests Markdown

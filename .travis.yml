@@ -2,6 +2,6 @@ language: python
 python:
 - '3.6'
 install:
-- script/ci_setup
+- script/ci_bootstrap
 script:
 - script/test
