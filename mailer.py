@@ -1,14 +1,24 @@
 import smtplib
 import ssl
 from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+import markdown
 
 class SendViaMail():
     def __init__(self, from_addr, to_addr, subj, message_text, smtp):
-        msg = MIMEText(message_text)
+        msg = MIMEMultipart('alternative')
         msg['Subject'] = subj
         msg['From'] = from_addr
         msg['To'] = to_addr
 
+        html = markdown.markdown(message_text)
+
+        part1 = MIMEText(message_text, 'plain')
+        part2 = MIMEText(html, 'html')
+
+        msg.attach(part1)
+        msg.attach(part2)
+        
         smtp_server = self.create_smtp_server(smtp)
         smtp_server.sendmail(from_addr, to_addr, msg.as_string())
         smtp_server.quit()
