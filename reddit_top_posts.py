@@ -16,14 +16,18 @@ if __name__ == '__main__':
         'password': os.environ['SMTP_PASSWORD'],
     }
 
+    message = "# Reddit top Posts \n"
+
     for sub in SUBS:
         tp = TopPosts(sub)
         bp = BeautifyTopPosts(sub, tp.top_posts)
+        message = message + bp.markdown()
 
-        SendViaMail(
-            from_addr=FROM_ADDR,
-            to_addr=TO_ADDR,
-            subj="[%s] Reddit Top Posts" % sub,
-            message_text=bp.markdown(),
-            smtp=SMTP
-        )
+    # print(message)
+    SendViaMail(
+        from_addr=FROM_ADDR,
+        to_addr=TO_ADDR,
+        subj="[%s] Reddit Top Posts" % sub,
+        message_text=message,
+        smtp=SMTP
+    )

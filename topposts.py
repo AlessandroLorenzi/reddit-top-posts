@@ -17,9 +17,9 @@ class BeautifyTopPosts():
         self.top_posts = top_posts
 
     def markdown(self):
-        message = "# %s \n" % self.subreddit
+        message = "\n## %s \n" % self.subreddit
         message += "\n"
         for post in self.top_posts:
-            message += "* [%s](https://reddit.com%s)\n"
-            message = message % (post['data']['title'], post['data']['permalink'])
+            message += "* %s - [%s](https://reddit.com%s)\n"
+            message = message % (post['data']['ups'], post['data']['title'], post['data']['permalink'])
         return message
