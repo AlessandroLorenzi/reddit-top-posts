@@ -18,7 +18,7 @@ class SendViaMail():
 
         msg.attach(part1)
         msg.attach(part2)
-        
+
         smtp_server = self.create_smtp_server(smtp)
         smtp_server.sendmail(from_addr, to_addr, msg.as_string())
         smtp_server.quit()
